@@ -1,16 +1,8 @@
 import React, { useState } from "react";
-import {
-    StyleSheet,
-    Text,
-    View,
-    TextInput,
-    TouchableOpacity,
-} from "react-native";
+import {StyleSheet, Text, View, TextInput, TouchableOpacity,} from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
-export default function Registro(){
-
-    const navigation = useNavigation();
+export default function Registro({navigation}){
 
     return (
         <View style={styles.container}>
@@ -46,7 +38,7 @@ export default function Registro(){
                 </TouchableOpacity>
                 <TouchableOpacity 
                     style={styles.cancelButton}
-                    onPress={()=> navigation.navigate('Login')}
+                    onPress={() => { navigation.navigate('Login');}}
                 >
                     <Text style={styles.cancelButtonText}>Cancelar</Text>
                 </TouchableOpacity>

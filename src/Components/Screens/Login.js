@@ -2,10 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
-export default function Login(){
-
-  const navigation = useNavigation();
-
+export default function Login({navigation}){
   return (
     <View style={styles.container}>
         <View style={styles.logoContainer}>
@@ -22,19 +19,20 @@ export default function Login(){
         <TextInput
           style={styles.input}
           placeholder="Contraseña"
-          secureTextEntry
+          secureTextEntry={true}
           autoCorrect={false}
         />
       </View>
       <TouchableOpacity
         style={styles.button}
+        onPress={() => { navigation.navigate('Restaurantes');}}
       >
         <Text style={styles.buttonText}>Iniciar sesión</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.buttonTextRegistro}
-        onPress={()=> navigation.navigate('Registro')}
+        onPress={() => { navigation.navigate('Registro');}}
       >
         <Text style={styles.textRegistro}>Registrarse</Text>
       </TouchableOpacity>
